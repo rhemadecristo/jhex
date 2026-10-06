@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JHEX — Música urbana con propósito</title>
+  <meta name="description" content="JHEX, artista cristiano urbano. Nueva música, videos, shows y booking.">
+  <meta property="og:title" content="JHEX — Música urbana con propósito">
+  <meta property="og:description" content="Escucha lo nuevo de JHEX. Urbano con fe.">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%230a0a0a'/><text x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='Arial Black,Arial' font-weight='900' font-size='38' fill='%23d4ff3a'>J</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="nav" id="top">
+    <div class="container nav__inner">
+      <a href="#top" class="brand" aria-label="JHEX, inicio">JHEX</a>
+      <button class="nav__toggle" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">
+        <span></span><span></span>
+      </button>
+      <nav id="menu" class="nav__menu">
+        <a href="#musica">Música</a>
+        <a href="#videos">Videos</a>
+        <a href="#historia">Historia</a>
+        <a href="#shows">Shows</a>
+        <a href="#booking" class="nav__cta">Booking</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO: cambia la imagen de fondo en styles.css (.hero) por una foto de JHEX en assets/ -->
+    <section class="hero">
+      <div class="hero__grain" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <p class="eyebrow reveal">Urbano · Fe · Propósito</p>
+        <h1 class="hero__title reveal">
+          <span>JHEX</span>
+        </h1>
+        <p class="hero__lead reveal">Ritmo de la calle, mensaje del cielo. Música urbana que habla de Cristo sin pedir permiso.</p>
+        <div class="hero__actions reveal">
+          <a href="#musica" class="btn btn--accent">Escuchar ahora</a>
+          <a href="#videos" class="btn btn--ghost">Ver videos</a>
+        </div>
+      </div>
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee__track">
+          <span>NUEVO SENCILLO YA DISPONIBLE ✦ STREAM EN TODAS LAS PLATAFORMAS ✦ URBANO CON PROPÓSITO ✦ </span>
+          <span>NUEVO SENCILLO YA DISPONIBLE ✦ STREAM EN TODAS LAS PLATAFORMAS ✦ URBANO CON PROPÓSITO ✦ </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- MÚSICA -->
+    <section class="section" id="musica">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow">01 — Música</p>
+          <h2>Lo nuevo</h2>
+        </div>
+
+        <article class="release reveal">
+          <div class="release__cover" aria-hidden="true">
+            <!-- Reemplaza por: <img src="assets/portada.jpg" alt="Portada de NOMBRE"> -->
+            <span>NUEVO<br>SENCILLO</span>
+          </div>
+          <div class="release__info">
+            <p class="tag">Sencillo · 2026</p>
+            <h3>Nombre del sencillo</h3>
+            <p>Escribe aquí una o dos líneas sobre la canción: de qué habla, qué te movió a escribirla y qué quieres que sienta quien la escuche.</p>
+            <div class="platforms">
+              <!-- Pega aquí tus enlaces reales -->
+              <a href="#" class="platform">Spotify</a>
+              <a href="#" class="platform">Apple Music</a>
+              <a href="#" class="platform">YouTube Music</a>
+              <a href="#" class="platform">Deezer</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Opcional: embed de Spotify. Cambia ARTIST_ID por el ID de tu perfil de artista. -->
+        <!--
+        <iframe class="embed" src="https://open.spotify.com/embed/artist/ARTIST_ID" height="352" loading="lazy" allow="encrypted-media" title="JHEX en Spotify"></iframe>
+        -->
+
+        <ul class="tracks reveal">
+          <li><span class="tracks__n">01</span><span class="tracks__t">Canción uno</span><span class="tracks__d">3:12</span></li>
+          <li><span class="tracks__n">02</span><span class="tracks__t">Canción dos</span><span class="tracks__d">2:58</span></li>
+          <li><span class="tracks__n">03</span><span class="tracks__t">Canción tres</span><span class="tracks__d">3:40</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- VIDEOS -->
+    <section class="section section--alt" id="videos">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow">02 — Videos</p>
+          <h2>En pantalla</h2>
+        </div>
+        <div class="videos">
+          <!-- Cambia data-id por el ID del video de YouTube (lo que va después de v= en la URL) -->
+          <button class="video reveal" data-id="" aria-label="Reproducir video oficial">
+            <span class="video__play" aria-hidden="true"></span>
+            <span class="video__label">Video oficial</span>
+          </button>
+          <button class="video reveal" data-id="" aria-label="Reproducir video en vivo">
+            <span class="video__play" aria-hidden="true"></span>
+            <span class="video__label">En vivo</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- HISTORIA -->
+    <section class="section" id="historia">
+      <div class="container about">
+        <div class="about__text reveal">
+          <p class="eyebrow">03 — Historia</p>
+          <h2>De la calle<br>al propósito</h2>
+          <p>Aquí va la historia de JHEX: de dónde eres, cómo empezaste en la música urbana y el momento en que Dios cambió el rumbo. Cuéntalo con tu voz, directo y real.</p>
+          <p>Un segundo párrafo para tu visión: a quién le quieres hablar con tu música, qué mensaje llevas y hacia dónde vas.</p>
+        </div>
+        <blockquote class="verse reveal">
+          <p>“No me avergüenzo del evangelio, porque es poder de Dios para salvación a todo aquel que cree.”</p>
+          <cite>Romanos 1:16</cite>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- SHOWS -->
+    <section class="section section--alt" id="shows">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow">04 — Shows</p>
+          <h2>Próximas fechas</h2>
+        </div>
+        <ul class="shows">
+          <li class="show reveal">
+            <time class="show__date"><b>15</b> NOV</time>
+            <div class="show__info"><strong>Nombre del evento</strong><span>Ciudad, País</span></div>
+            <a href="#booking" class="btn btn--small">Info</a>
+          </li>
+          <li class="show reveal">
+            <time class="show__date"><b>06</b> DIC</time>
+            <div class="show__info"><strong>Nombre del evento</strong><span>Ciudad, País</span></div>
+            <a href="#booking" class="btn btn--small">Info</a>
+          </li>
+          <li class="show reveal">
+            <time class="show__date"><b>20</b> DIC</time>
+            <div class="show__info"><strong>Nombre del evento</strong><span>Ciudad, País</span></div>
+            <a href="#booking" class="btn btn--small">Info</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- BOOKING -->
+    <section class="section booking" id="booking">
+      <div class="container booking__inner">
+        <div class="reveal">
+          <p class="eyebrow">05 — Booking</p>
+          <h2>Lleva a JHEX<br>a tu evento</h2>
+          <p>Iglesias, conciertos, campamentos juveniles y eventos evangelísticos. Escríbenos y te respondemos pronto.</p>
+          <ul class="contact">
+            <li><span>Correo</span><a href="mailto:booking@jhex.com">booking@jhex.com</a></li>
+            <li><span>WhatsApp</span><a href="https://wa.me/00000000000">+000 0000 0000</a></li>
+          </ul>
+        </div>
+        <!-- data-email: correo al que llegan las solicitudes -->
+        <form class="form reveal" data-email="booking@jhex.com">
+          <label>Nombre<input name="nombre" required autocomplete="name"></label>
+          <label>Organización / Iglesia<input name="organizacion"></label>
+          <label>Fecha del evento<input name="fecha" type="date"></label>
+          <label>Ciudad<input name="ciudad"></label>
+          <label class="form__full">Mensaje<textarea name="mensaje" rows="4" required></textarea></label>
+          <button type="submit" class="btn btn--accent form__full">Enviar solicitud</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a href="#top" class="brand">JHEX</a>
+      <nav class="socials" aria-label="Redes sociales">
+        <!-- Pega aquí tus enlaces reales -->
+        <a href="#">Instagram</a>
+        <a href="#">TikTok</a>
+        <a href="#">YouTube</a>
+        <a href="#">Spotify</a>
+      </nav>
+      <p class="footer__copy">© <span id="year"></span> JHEX. Para la gloria de Dios.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
