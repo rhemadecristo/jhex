@@ -168,7 +168,7 @@
   function intro() {
     const tl = gsap.timeline({ defaults: { ease: 'expo.out' } });
     tl.fromTo('.hero__img', { scale: 1.25, filter: 'brightness(0)' }, { scale: 1.08, filter: 'brightness(1)', duration: 2.2 }, 0)
-      .fromTo('.hero__logo', { opacity: 0, y: 60, scale: 0.85, filter: 'blur(18px)' }, { opacity: 1, y: 0, scale: 1, filter: 'blur(0px)', duration: 1.6 }, 0.25)
+      .fromTo('.hero__logo-wrap', { opacity: 0, y: 60, scale: 0.85, filter: 'blur(18px)' }, { opacity: 1, y: 0, scale: 1, filter: 'blur(0px)', duration: 1.6 }, 0.25)
       .fromTo('[data-hero]', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 1.2, stagger: 0.12 }, 0.7);
   }
 
@@ -176,17 +176,33 @@
   gsap.to('.hero__img', { yPercent: 18, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
   gsap.to('.hero__content', { yPercent: -30, opacity: 0, ease: 'none', scrollTrigger: { trigger: '.hero', start: '30% top', end: 'bottom top', scrub: true } });
 
-  // Logo con inclinación 3D según el mouse
+  // Logo cromado: inclinación 3D, imán hacia el cursor y brillo que sigue al mouse
   if (finePointer) {
     const logo = $('[data-tilt]');
     const rotX = gsap.quickTo(logo, 'rotationX', { duration: 0.8, ease: 'power3' });
     const rotY = gsap.quickTo(logo, 'rotationY', { duration: 0.8, ease: 'power3' });
-    gsap.set(logo, { transformPerspective: 900 });
+    const moveX = gsap.quickTo(logo, 'x', { duration: 1, ease: 'power3' });
+    const moveY = gsap.quickTo(logo, 'y', { duration: 1, ease: 'power3' });
+    const glow = gsap.quickTo(logo, '--glow', { duration: 0.6, ease: 'power2' });
+    gsap.set(logo, { transformPerspective: 900, '--glow': 0 });
     hero.addEventListener('pointermove', (e) => {
       rotY((e.clientX / innerWidth - 0.5) * 22);
       rotX((e.clientY / innerHeight - 0.5) * -16);
+      const r = logo.getBoundingClientRect();
+      const dx = e.clientX - (r.left + r.width / 2);
+      const dy = e.clientY - (r.top + r.height / 2);
+      const pull = Math.max(0, 1 - Math.hypot(dx, dy) / Math.max(r.width, r.height)); // 1 encima del logo, 0 lejos
+      moveX(dx * 0.12 * pull);
+      moveY(dy * 0.12 * pull);
+      logo.style.setProperty('--mx', `${((e.clientX - r.left) / r.width) * 100}%`);
+      logo.style.setProperty('--my', `${((e.clientY - r.top) / r.height) * 100}%`);
+      glow(0.35 + pull * 0.65);
+      logo.classList.add('is-active');
     });
-    hero.addEventListener('pointerleave', () => { rotX(0); rotY(0); });
+    hero.addEventListener('pointerleave', () => {
+      rotX(0); rotY(0); moveX(0); moveY(0); glow(0);
+      logo.classList.remove('is-active');
+    });
   }
 
   // Ticker: reacciona a la velocidad del scroll
