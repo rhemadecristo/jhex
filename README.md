@@ -1,6 +1,10 @@
 # JHEX — Sitio oficial
 
-Sitio estático (HTML, CSS y JS sin build) para JHEX, artista cristiano urbano.
+Sitio estático (HTML, CSS y JS sin build) de JHEX, artista de música urbana con propósito (ESCOL Records).
+
+- Animaciones: GSAP + ScrollTrigger y scroll suave con Lenis (en `js/vendor/`, sin CDN).
+- Imágenes y logo: servidos desde Cloudinary (`dawxjcvf`) con `f_auto,q_auto` y tamaños responsive.
+- SEO/GEO: meta tags, Open Graph, JSON-LD (`MusicGroup`, `FAQPage`, `WebSite`), `sitemap.xml`, `robots.txt` (permite bots de IA) y `llms.txt`.
 
 ## Ver en local
 
@@ -8,16 +12,18 @@ Sitio estático (HTML, CSS y JS sin build) para JHEX, artista cristiano urbano.
 python3 -m http.server 8000
 ```
 
-## Personalizar
+## Editar contenido
 
-- **Lanzamiento**: nombre, descripción y enlaces a plataformas en la sección `#musica` de `index.html`. Para la portada, pon la imagen en `assets/` y reemplaza el `<span>` de `.release__cover` por un `<img>`.
-- **Videos**: en cada `<button class="video">`, pon el ID de YouTube en `data-id` (lo que va después de `v=`).
-- **Foto principal**: en `styles.css`, regla `.hero`, hay un comentario con la línea para usar una foto.
-- **Shows**: fechas, eventos y ciudades en `#shows`.
-- **Booking**: correo y WhatsApp en `#booking`; el correo del formulario está en `data-email` del `<form>`.
-- **Redes**: enlaces en el `<footer>`.
-- **Colores**: variables en `:root` al inicio de `styles.css` (`--accent` es el verde neón).
+| Qué | Dónde |
+| --- | --- |
+| Pre-save de “Rendido” | `https://escol.io/rendido` en `index.html` (busca `escol.io`) |
+| Correo de booking | `data-email` del `<form class="form">` en `index.html` |
+| Instagram / TikTok / YouTube | `href=""` en el `<footer>` (los vacíos se ocultan solos). Agrégalos también a `sameAs` en el JSON-LD |
+| Cifras | Sección `#numeros` (`data-count`) y `llms.txt` |
+| Fotos | URLs de Cloudinary en `index.html` |
+| Dominio | Reemplaza `https://jhex.vercel.app` en `index.html`, `robots.txt`, `sitemap.xml` y `llms.txt` |
+| Colores | Variables en `:root` de `styles.css` |
 
 ## Publicar
 
-Se puede desplegar tal cual en Vercel, Netlify o GitHub Pages.
+Conectado a Vercel: cada push a `main` se publica solo.
