@@ -43,7 +43,7 @@
   }
 
   /* ---------- Fotos que se rompen (glitch) ---------- */
-  if (!reduced) {
+  if (!reduced && finePointer) {
     $$('.shot').forEach((shot) => {
       const img = $('img', shot);
       const glitch = () => {
@@ -57,7 +57,8 @@
   }
 
   /* ---------- Letras que se dispersan ---------- */
-  const titles = $$('.drop__title, .head__t, .dark__title');
+  // En celular los títulos quedan enteros (menos elementos y sin efectos que pesen)
+  const titles = finePointer ? $$('.drop__title, .head__t, .dark__title') : [];
   titles.forEach((el) => {
     el.setAttribute('data-scatter', '');
     if (!el.hasAttribute('aria-label')) el.setAttribute('aria-label', [...el.childNodes].map((n) => (n.nodeName === 'BR' ? ' ' : n.textContent)).join('').trim().replace(/\s+/g, ' '));

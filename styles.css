@@ -64,7 +64,8 @@ strong { color: #fff; }
 .head { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: clamp(2rem, 5vw, 3.5rem); }
 .head__n { font: 700 .8rem/1 var(--body); letter-spacing: .2em; color: var(--muted); padding-top: .9em; }
 .head__t {
-  margin: 0; font: 400 clamp(3.4rem, 2rem + 8vw, 9rem)/.86 var(--display);
+  /* espacio extra arriba para que el cromo cubra también las tildes (MÚSICA, GALERÍA) */
+  padding-top: .2em; margin: -.2em 0 0; font: 400 clamp(3.4rem, 2rem + 8vw, 9rem)/.86 var(--display);
   text-transform: uppercase; letter-spacing: -.01em;
   animation: shine 8s linear infinite;
 }
@@ -502,4 +503,61 @@ strong { color: #fff; }
 @media (max-width: 767px) and (max-height: 700px) {
   .hero__content { padding-top: 88px; padding-bottom: 2.5rem; }
   .hero__tag { margin: 1rem 0 1.4rem; }
+}
+
+/* =========================================================
+   Celular: versión simplificada, ligera y sin saturar
+   ========================================================= */
+@media (max-width: 767px) {
+  /* Sin pantalla de carga ni grano animado */
+  .js .loader, .grain { display: none; }
+
+  /* Brillo cromado fijo (sin animación continua) y sin desenfoques costosos */
+  .head__t, .btn--chrome, .release__title, .stat dd, .drop__title, .player__icon, .secret__title, [data-scatter] .ch { animation: none; background-position: 30% 0; }
+  .nav.is-scrolled { background: rgba(5, 5, 5, .94); backdrop-filter: none; -webkit-backdrop-filter: none; }
+  .btn--line, .release__badge { backdrop-filter: none; }
+  .release__badge { background: rgba(5, 5, 5, .85); }
+  .drop__title { filter: none; }
+
+  /* Menos ruido visual */
+  .head__n, .gallery__hint, .drop__platforms, .hero__kicker { display: none; }
+  .section { padding: 4.5rem 0; }
+  .head { margin-bottom: 1.8rem; }
+  .head__t { font-size: clamp(2.8rem, 13vw, 3.6rem); }
+  .ticker { padding: .7rem 0; }
+  .ticker span { font-size: 1.8rem; }
+
+  /* Secciones a pantalla completa más compactas */
+  .drop, .dark__stage { min-height: 0; }
+  .drop__inner { padding-block: 5rem 4.5rem; }
+  .dark__stage { padding-block: 6rem 7rem; }
+  .manifesto { padding-block: 4.5rem; }
+
+  /* Música: reproductor más bajo */
+  .player__frame { min-height: 380px; }
+  .player__frame iframe { height: 380px; }
+
+  /* Cifras en dos columnas compactas */
+  .stats__grid { grid-template-columns: 1fr 1fr; }
+  .stat { padding: 1.2rem; }
+  .stat--xl, .stat:last-child { grid-column: 1 / -1; }
+  .stat dd, .stat--xl dd { font-size: clamp(2.2rem, 10vw, 3rem); }
+  .stat--xl dd { font-size: clamp(2.8rem, 13vw, 3.8rem); }
+  .stat dt { font-size: .68rem; letter-spacing: .12em; }
+
+  /* Botón flotante más discreto */
+  .float-cta { min-height: 44px; padding: 0 1rem; font-size: .7rem; background: rgba(12, 12, 13, .94); backdrop-filter: none; -webkit-backdrop-filter: none; }
+
+  /* Pie más compacto */
+  .footer { padding-top: 3.5rem; }
+  .footer__logo { width: min(60vw, 16rem); }
+}
+
+@media (max-width: 767px) {
+  .drop__kicker { flex-wrap: wrap; justify-content: center; letter-spacing: .22em; text-align: center; }
+  .dark__stage { display: flex; flex-direction: column; justify-content: center; gap: 2rem; padding-block: 5rem; }
+  .dark__hint { position: static; padding: 0 var(--gutter); }
+  .dark__pattern { -webkit-text-stroke-color: rgba(201, 204, 209, .55); }
+  .dark__pattern span:nth-child(4n) { color: rgba(201, 204, 209, .3); }
+  .float-cta.is-muted { transform: translateY(140%); opacity: 0; pointer-events: none; }
 }

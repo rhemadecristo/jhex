@@ -3,6 +3,7 @@
   const root = document.documentElement;
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  const isPhone = window.matchMedia('(max-width: 767px)').matches;
   const hasGsap = typeof window.gsap !== 'undefined' && typeof window.ScrollTrigger !== 'undefined';
   const animate = hasGsap && !reduced;
   if (animate) root.classList.add('anim');
@@ -12,7 +13,8 @@
 
   /* ---------- Scroll suave ---------- */
   let lenis = null;
-  if (animate && typeof window.Lenis !== 'undefined') {
+  // Scroll suave solo con mouse; en pantallas táctiles el scroll nativo es más fluido
+  if (animate && finePointer && typeof window.Lenis !== 'undefined') {
     lenis = new window.Lenis({ duration: 1.15, smoothWheel: true });
     window.__lenis = lenis;
     lenis.on('scroll', ScrollTrigger.update);
@@ -64,6 +66,16 @@
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
 
+  // El botón flotante se esconde donde ya hay un botón de pre-save a la vista
+  if (floatCta && 'IntersectionObserver' in window) {
+    const busy = new Set();
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((en) => (en.isIntersecting ? busy.add(en.target) : busy.delete(en.target)));
+      floatCta.classList.toggle('is-muted', busy.size > 0);
+    }, { threshold: 0.25 });
+    $$('.drop, .booking, .footer').forEach((el) => io.observe(el));
+  }
+
   /* ---------- Loader ---------- */
   const loader = $('.loader');
   let introPlayed = false;
@@ -73,7 +85,8 @@
     loader && loader.classList.add('is-done');
     if (animate) intro();
   };
-  if (document.readyState === 'complete') setTimeout(finishLoad, 900);
+  if (isPhone) finishLoad(); // en celular no hay pantalla de carga: el contenido aparece de inmediato
+  else if (document.readyState === 'complete') setTimeout(finishLoad, 900);
   else window.addEventListener('load', () => setTimeout(finishLoad, 500));
   setTimeout(finishLoad, 2600); // nunca bloquear más de 2.6 s
 
@@ -252,25 +265,28 @@
     });
   });
 
-  // Foto de historia: revelado + parallax
-  gsap.fromTo('[data-clip]', { clipPath: 'inset(18% 18% 18% 18% round 6px)' }, {
-    clipPath: 'inset(0% 0% 0% 0% round 6px)', ease: 'none',
-    scrollTrigger: { trigger: '[data-clip]', start: 'top 90%', end: 'center 55%', scrub: true },
-  });
-  gsap.fromTo('[data-parallax]', { yPercent: -8 }, {
-    yPercent: 8, ease: 'none',
-    scrollTrigger: { trigger: '[data-clip]', start: 'top bottom', end: 'bottom top', scrub: true },
-  });
-  gsap.fromTo('[data-parallax]', { filter: 'grayscale(1) contrast(1.1)' }, {
-    filter: 'grayscale(0) contrast(1.05)', ease: 'none',
-    scrollTrigger: { trigger: '[data-clip]', start: 'center 70%', end: 'bottom 30%', scrub: true },
-  });
+  // Efectos de scroll más pesados: solo en tablet y computadora
+  if (!isPhone) {
+    // Foto de historia: revelado + parallax
+    gsap.fromTo('[data-clip]', { clipPath: 'inset(18% 18% 18% 18% round 6px)' }, {
+      clipPath: 'inset(0% 0% 0% 0% round 6px)', ease: 'none',
+      scrollTrigger: { trigger: '[data-clip]', start: 'top 90%', end: 'center 55%', scrub: true },
+    });
+    gsap.fromTo('[data-parallax]', { yPercent: -8 }, {
+      yPercent: 8, ease: 'none',
+      scrollTrigger: { trigger: '[data-clip]', start: 'top bottom', end: 'bottom top', scrub: true },
+    });
+    gsap.fromTo('[data-parallax]', { filter: 'grayscale(1) contrast(1.1)' }, {
+      filter: 'grayscale(0) contrast(1.05)', ease: 'none',
+      scrollTrigger: { trigger: '[data-clip]', start: 'center 70%', end: 'bottom 30%', scrub: true },
+    });
 
-  // Portada de Rendido: zoom suave al entrar
-  gsap.fromTo('.release__art img', { scale: 1.25 }, {
-    scale: 1, ease: 'none',
-    scrollTrigger: { trigger: '.release__art', start: 'top bottom', end: 'center center', scrub: true },
-  });
+    // Portada de Rendido: zoom suave al entrar
+    gsap.fromTo('.release__art img', { scale: 1.25 }, {
+      scale: 1, ease: 'none',
+      scrollTrigger: { trigger: '.release__art', start: 'top bottom', end: 'center center', scrub: true },
+    });
+  }
 
   // Contadores
   $$('[data-count]').forEach((el) => {
