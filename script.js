@@ -220,10 +220,6 @@
   });
 
   // Lanzamiento de Rendido: el título se abre y la foto se mueve
-  gsap.fromTo('.drop__bg img', { yPercent: -10, scale: 1.1 }, {
-    yPercent: 0, scale: 1, ease: 'none',
-    scrollTrigger: { trigger: '.drop', start: 'top bottom', end: 'bottom top', scrub: true },
-  });
   gsap.fromTo('[data-drop-title]', { letterSpacing: '0.35em', scale: 0.7, opacity: 0 }, {
     letterSpacing: '-0.01em', scale: 1, opacity: 1, ease: 'none',
     scrollTrigger: { trigger: '.drop', start: 'top 85%', end: 'center 60%', scrub: 0.6 },

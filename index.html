@@ -70,11 +70,16 @@
         "logo": "https://res.cloudinary.com/dawxjcvf/image/upload/e_trim/f_png,w_800/ChatGPT_Image_Oct_6_2026_03_35_01_PM-1.png",
         "description": "JHEX es un artista urbano con un mensaje positivo que utiliza la música como una plataforma para transmitir fe, esperanza y propósito. Su propuesta combina el sonido urbano actual con una identidad auténtica y conecta con audiencias jóvenes sin importar sus creencias o religión.",
         "slogan": "Música urbana con propósito. Un mensaje positivo es música para todos.",
-        "genre": ["Música urbana", "Urbano cristiano", "R&B", "Hip hop"],
+        "genre": ["Música urbana", "Urbano cristiano", "Trap cristiano", "R&B", "Hip hop"],
         "recordLabel": { "@type": "Organization", "name": "ESCOL Records" },
         "sameAs": [
-          "https://open.spotify.com/artist/4xVN5eUUxtTH7iGqwOoDQ2"
+          "https://open.spotify.com/artist/4xVN5eUUxtTH7iGqwOoDQ2",
+          "https://www.instagram.com/jhexpr/",
+          "https://www.tiktok.com/@jhexpr",
+          "https://www.facebook.com/Jhexpr",
+          "https://www.threads.com/@jhexpr"
         ],
+        "foundingLocation": { "@type": "Place", "name": "Carolina, Puerto Rico", "address": { "@type": "PostalAddress", "addressLocality": "Carolina", "addressRegion": "PR", "addressCountry": "PR" } },
         "track": [
           {
             "@type": "MusicRecording",
@@ -88,7 +93,16 @@
             "name": "Te fallo",
             "byArtist": { "@id": "https://jhex.vercel.app/#artist" },
             "genre": ["Worship acústico", "R&B"]
-          }
+          },
+          {
+            "@type": "MusicRecording",
+            "name": "Me Copias?",
+            "byArtist": { "@id": "https://jhex.vercel.app/#artist" },
+            "genre": ["Trap cristiano"],
+            "subjectOf": { "@type": "VideoObject", "name": "JHEX - ME COPIAS? (Video oficial)", "embedUrl": "https://www.youtube.com/embed/pV4w28hNmY4", "url": "https://www.youtube.com/watch?v=pV4w28hNmY4" }
+          },
+          { "@type": "MusicRecording", "name": "Como Ella", "byArtist": { "@id": "https://jhex.vercel.app/#artist" } },
+          { "@type": "MusicRecording", "name": "Ofrenda", "byArtist": { "@id": "https://jhex.vercel.app/#artist" } }
         ],
         "interactionStatistic": [
           { "@type": "InteractionCounter", "interactionType": "https://schema.org/ListenAction", "userInteractionCount": 2750000, "description": "Streams globales aproximados en los últimos 6 meses" }
@@ -98,7 +112,7 @@
         "@type": "FAQPage",
         "@id": "https://jhex.vercel.app/#faq",
         "mainEntity": [
-          { "@type": "Question", "name": "¿Quién es JHEX?", "acceptedAnswer": { "@type": "Answer", "text": "JHEX es un artista urbano con un mensaje positivo que usa la música como plataforma para transmitir fe, esperanza y propósito. Trabaja con ESCOL Records." } },
+          { "@type": "Question", "name": "¿Quién es JHEX?", "acceptedAnswer": { "@type": "Answer", "text": "JHEX es un artista urbano de Carolina, Puerto Rico, con un mensaje positivo que usa la música como plataforma para transmitir fe, esperanza y propósito. Trabaja con ESCOL Records. En redes es @jhexpr." } },
           { "@type": "Question", "name": "¿Qué tipo de música hace JHEX?", "acceptedAnswer": { "@type": "Answer", "text": "Música urbana con propósito: combina el sonido urbano actual con fusiones de R&B y momentos acústicos de adoración, con letras de fe y esperanza pensadas para todo público." } },
           { "@type": "Question", "name": "¿Cuál es la canción más reciente de JHEX?", "acceptedAnswer": { "@type": "Answer", "text": "“Rendido”, su nuevo sencillo con ESCOL Records. Ya puedes hacer pre-save en escol.io/rendido. Su lanzamiento anterior es “Te fallo”, una canción íntima nacida en oración, con arreglo acústico de adoración y fusiones de R&B." } },
           { "@type": "Question", "name": "¿Dónde puedo escuchar a JHEX?", "acceptedAnswer": { "@type": "Answer", "text": "Su música está en Spotify y en las principales plataformas digitales." } },
@@ -194,13 +208,7 @@
 
     <!-- LANZAMIENTO: RENDIDO -->
     <section class="drop" id="rendido" aria-labelledby="rendido-t">
-      <div class="drop__bg" aria-hidden="true">
-        <img loading="lazy" decoding="async"
-          src="https://res.cloudinary.com/dawxjcvf/image/upload/c_fill,g_face,ar_16:9,w_1920,f_auto,q_auto/WhatsApp_Image_2026-09-28_at_14.23.35_1.jpg"
-          srcset="https://res.cloudinary.com/dawxjcvf/image/upload/c_fill,g_face,ar_3:4,w_900,f_auto,q_auto/WhatsApp_Image_2026-09-28_at_14.23.35_1.jpg 900w,
-                  https://res.cloudinary.com/dawxjcvf/image/upload/c_fill,g_face,ar_16:9,w_1920,f_auto,q_auto/WhatsApp_Image_2026-09-28_at_14.23.35_1.jpg 1920w"
-          sizes="100vw" width="1920" height="1080" alt="">
-      </div>
+      <div class="drop__bg" aria-hidden="true"></div>
       <div class="drop__inner">
         <p class="drop__kicker"><i></i>Nuevo sencillo · Pre-save disponible</p>
         <h2 id="rendido-t" class="drop__title" data-drop-title>Rendido</h2>
@@ -283,7 +291,7 @@
             <span class="head__n">02</span>
             <h2 id="historia-t" class="head__t">Historia</h2>
           </header>
-          <p class="lead" data-reveal>Un artista urbano con un mensaje positivo.</p>
+          <p class="lead" data-reveal>Desde Carolina, Puerto Rico: un artista urbano con un mensaje positivo.</p>
           <p data-reveal>JHEX es un artista urbano que utiliza la música como una plataforma para transmitir fe, esperanza y propósito. Su propuesta combina el sonido urbano actual con una identidad auténtica, creando música capaz de conectar con audiencias jóvenes sin importar sus creencias o religión.</p>
           <p data-reveal>Con una visión de crecimiento y evolución constante, JHEX inicia ahora un nuevo camino de la mano de <strong>ESCOL Records</strong>: una etapa enfocada en desarrollar su propuesta artística, expandir su alcance y llevar su sonido a nuevas audiencias.</p>
           <blockquote class="quote" data-reveal>
@@ -297,11 +305,7 @@
     <!-- LINTERNA: la luz sigue al cursor o al dedo -->
     <section class="dark" id="luz" aria-labelledby="luz-t">
       <div class="dark__stage" data-flashlight>
-        <img class="dark__img" loading="lazy" decoding="async"
-          src="https://res.cloudinary.com/dawxjcvf/image/upload/c_fill,g_face,ar_16:9,w_1600,f_auto,q_auto/WhatsApp_Image_2026-09-29_at_08.42.48.jpg"
-          srcset="https://res.cloudinary.com/dawxjcvf/image/upload/c_fill,g_face,ar_3:4,w_900,f_auto,q_auto/WhatsApp_Image_2026-09-29_at_08.42.48.jpg 900w,
-                  https://res.cloudinary.com/dawxjcvf/image/upload/c_fill,g_face,ar_16:9,w_1600,f_auto,q_auto/WhatsApp_Image_2026-09-29_at_08.42.48.jpg 1600w"
-          sizes="100vw" width="1600" height="900" alt="JHEX en la oscuridad">
+        <div class="dark__pattern" aria-hidden="true"><span>FE</span><span>ESPERANZA</span><span>PROPÓSITO</span><span>RENDIDO</span><span>FE</span><span>ESPERANZA</span><span>PROPÓSITO</span><span>RENDIDO</span><span>FE</span><span>ESPERANZA</span><span>PROPÓSITO</span><span>RENDIDO</span><span>FE</span><span>ESPERANZA</span><span>PROPÓSITO</span><span>RENDIDO</span><span>FE</span><span>ESPERANZA</span><span>PROPÓSITO</span><span>RENDIDO</span><span>FE</span><span>ESPERANZA</span><span>PROPÓSITO</span><span>RENDIDO</span></div>
         <div class="dark__veil" aria-hidden="true"></div>
         <div class="dark__text">
           <h2 id="luz-t" class="dark__title">En la oscuridad<br>brilla la luz</h2>
@@ -387,7 +391,7 @@
         <div class="faq__list">
           <details data-reveal>
             <summary>¿Quién es JHEX?</summary>
-            <p>JHEX es un artista urbano con un mensaje positivo que usa la música como plataforma para transmitir fe, esperanza y propósito. Trabaja con ESCOL Records.</p>
+            <p>JHEX es un artista urbano de Carolina, Puerto Rico, con un mensaje positivo que usa la música como plataforma para transmitir fe, esperanza y propósito. Trabaja con ESCOL Records. En redes lo encuentras como <a href="https://www.instagram.com/jhexpr/" target="_blank" rel="noopener">@jhexpr</a>.</p>
           </details>
           <details data-reveal>
             <summary>¿Qué tipo de música hace?</summary>
@@ -461,9 +465,11 @@
         <a href="https://escol.io/rendido" target="_blank" rel="noopener">Pre-save Rendido</a>
         <a href="https://open.spotify.com/artist/4xVN5eUUxtTH7iGqwOoDQ2" target="_blank" rel="noopener me">Spotify</a>
         <!-- Pega los enlaces reales; los vacíos se ocultan solos -->
-        <a href="" target="_blank" rel="noopener me">Instagram</a>
-        <a href="" target="_blank" rel="noopener me">TikTok</a>
-        <a href="" target="_blank" rel="noopener me">YouTube</a>
+        <a href="https://www.instagram.com/jhexpr/" target="_blank" rel="noopener me">Instagram</a>
+        <a href="https://www.tiktok.com/@jhexpr" target="_blank" rel="noopener me">TikTok</a>
+        <a href="https://www.youtube.com/watch?v=pV4w28hNmY4" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://www.facebook.com/Jhexpr" target="_blank" rel="noopener me">Facebook</a>
+        <a href="https://www.threads.com/@jhexpr" target="_blank" rel="noopener me">Threads</a>
       </nav>
       <p class="footer__copy">© <span id="year">2026</span> JHEX · ESCOL Records. Para la gloria de Dios.</p>
     </div>
