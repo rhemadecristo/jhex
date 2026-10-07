@@ -245,8 +245,9 @@
 
   // Títulos de sección: entrada con recorte
   $$('.head__t').forEach((t) => {
-    gsap.fromTo(t, { clipPath: 'inset(0 0 100% 0)', y: 40 }, {
-      clipPath: 'inset(0 0 0% 0)', y: 0, duration: 1.3, ease: 'expo.out',
+    // El recorte deja margen arriba para no cortar las tildes (Á, Í, Ú) y se quita al terminar
+    gsap.fromTo(t, { clipPath: 'inset(-25% -5% 100% -5%)', y: 40 }, {
+      clipPath: 'inset(-25% -5% -10% -5%)', y: 0, duration: 1.3, ease: 'expo.out', clearProps: 'clipPath',
       scrollTrigger: { trigger: t, start: 'top 90%' },
     });
   });

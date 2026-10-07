@@ -60,7 +60,7 @@
   const titles = $$('.drop__title, .head__t, .dark__title');
   titles.forEach((el) => {
     el.setAttribute('data-scatter', '');
-    if (!el.hasAttribute('aria-label')) el.setAttribute('aria-label', el.textContent.trim().replace(/\s+/g, ' '));
+    if (!el.hasAttribute('aria-label')) el.setAttribute('aria-label', [...el.childNodes].map((n) => (n.nodeName === 'BR' ? ' ' : n.textContent)).join('').trim().replace(/\s+/g, ' '));
     // Divide en letras conservando los <br>
     const parts = [];
     el.childNodes.forEach((n) => {
