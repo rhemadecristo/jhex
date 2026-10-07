@@ -43,7 +43,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="image" href="https://res.cloudinary.com/dawxjcvf/image/upload/e_trim/f_auto,q_auto,w_900/ChatGPT_Image_Oct_6_2026_03_35_01_PM-1.png" fetchpriority="high">
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=202610072022">
+  <link rel="stylesheet" href="styles.css?v=202610072030">
   <script>document.documentElement.classList.replace('no-js', 'js');</script>
 
   <!-- Datos estructurados (SEO + motores de IA) -->
@@ -85,6 +85,7 @@
           {
             "@type": "MusicRecording",
             "name": "Rendido",
+            "image": "https://res.cloudinary.com/dawxjcvf/image/upload/c_limit,w_1200,f_jpg,q_auto/IMG_7091",
             "byArtist": { "@id": "https://jhex.vercel.app/#artist" },
             "recordLabel": { "@type": "Organization", "name": "ESCOL Records" },
             "url": "https://escol.io/rendido"
@@ -240,6 +241,25 @@
           <h2 id="musica-t" class="head__t">Música</h2>
         </header>
 
+        <!-- Lanzamiento destacado: cover art de Rendido -->
+        <article class="feature" data-reveal>
+          <a class="feature__cover" href="https://escol.io/rendido" target="_blank" rel="noopener" data-play data-presave aria-label="Pre-save de Rendido">
+            <img loading="lazy" decoding="async"
+              src="https://res.cloudinary.com/dawxjcvf/image/upload/c_limit,w_900,f_auto,q_auto/IMG_7091"
+              srcset="https://res.cloudinary.com/dawxjcvf/image/upload/c_limit,w_600,f_auto,q_auto/IMG_7091 600w,
+                      https://res.cloudinary.com/dawxjcvf/image/upload/c_limit,w_900,f_auto,q_auto/IMG_7091 900w,
+                      https://res.cloudinary.com/dawxjcvf/image/upload/c_limit,w_1200,f_auto,q_auto/IMG_7091 1200w"
+              sizes="(max-width: 899px) 92vw, 44vw" width="900" height="900" alt="Cover art de Rendido, nuevo sencillo de JHEX">
+          </a>
+          <div class="feature__body">
+            <p class="feature__label"><i></i>Nuevo sencillo · Próximo estreno</p>
+            <h3 class="feature__title">Rendido</h3>
+            <p class="feature__meta">JHEX · ESCOL Records</p>
+            <p>Guárdala ahora con el pre-save y “Rendido” llegará directo a tu biblioteca el día del estreno.</p>
+            <a class="btn btn--chrome btn--lg" href="https://escol.io/rendido" target="_blank" rel="noopener" data-magnetic data-presave>Pre-save “Rendido”</a>
+          </div>
+        </article>
+
         <div class="music__grid">
           <div class="releases">
             <article class="release" data-reveal>
@@ -262,13 +282,6 @@
                 </div>
               </div>
             </article>
-
-            <a class="prev" href="https://escol.io/rendido" target="_blank" rel="noopener" data-reveal data-presave>
-              <img class="prev__img" loading="lazy" decoding="async" src="https://res.cloudinary.com/dawxjcvf/image/upload/c_fill,g_face,ar_4:5,w_240,f_auto,q_auto/jhex_foto_2_low_Reel_de_Instagram.jpg" srcset="https://res.cloudinary.com/dawxjcvf/image/upload/c_fill,g_face,ar_4:5,w_240,f_auto,q_auto/jhex_foto_2_low_Reel_de_Instagram.jpg 240w, https://res.cloudinary.com/dawxjcvf/image/upload/c_fill,g_face,ar_4:5,w_480,f_auto,q_auto/jhex_foto_2_low_Reel_de_Instagram.jpg 480w" sizes="120px" width="240" height="300" alt="JHEX, imagen de Rendido">
-              <span class="prev__label"><i></i>Próximo estreno</span>
-              <span class="prev__title">Rendido</span>
-              <span class="prev__cta">Pre-save ↗</span>
-            </a>
           </div>
 
           <div class="player" data-reveal>
@@ -477,7 +490,7 @@
   <script src="js/vendor/gsap.min.js" defer></script>
   <script src="js/vendor/ScrollTrigger.min.js" defer></script>
   <script src="js/vendor/lenis.min.js" defer></script>
-  <script src="script.js?v=202610072022" defer></script>
-  <script src="js/interactive.js?v=202610072022" defer></script>
+  <script src="script.js?v=202610072030" defer></script>
+  <script src="js/interactive.js?v=202610072030" defer></script>
 </body>
 </html>

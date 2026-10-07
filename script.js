@@ -73,7 +73,7 @@
       entries.forEach((en) => (en.isIntersecting ? busy.add(en.target) : busy.delete(en.target)));
       floatCta.classList.toggle('is-muted', busy.size > 0);
     }, { threshold: 0.25 });
-    $$('.drop, .booking, .footer').forEach((el) => io.observe(el));
+    $$('.drop, .feature, .booking, .footer').forEach((el) => io.observe(el));
   }
 
   /* ---------- Loader ---------- */

@@ -585,3 +585,25 @@ strong { color: #fff; }
   .prev { grid-template-columns: auto 1fr; }
   .prev__cta { grid-column: 2; padding-bottom: 0; }
 }
+
+/* ---------- Música: lanzamiento destacado (cover de Rendido) ---------- */
+.feature { display: grid; gap: clamp(1.6rem, 4vw, 4rem); align-items: center; margin-bottom: clamp(3.5rem, 8vw, 6rem); }
+@media (min-width: 900px) { .feature { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } }
+.feature__cover { display: block; aspect-ratio: 1; overflow: hidden; border-radius: 8px; background: var(--surface); box-shadow: 0 30px 80px rgba(0, 0, 0, .6), 0 0 0 1px var(--line); }
+.feature__cover img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease); }
+.feature__cover:hover img { transform: scale(1.03); }
+.feature__body { min-width: 0; }
+.feature__label { display: inline-flex; align-items: center; gap: .6rem; margin: 0 0 1rem; font-size: .75rem; font-weight: 800; letter-spacing: .25em; text-transform: uppercase; color: var(--silver); }
+.feature__label i { width: 8px; height: 8px; border-radius: 50%; background: #fff; animation: pulse 1.8s infinite; flex: none; }
+.feature__title {
+  margin: 0; font: 400 clamp(4rem, 2rem + 8vw, 9rem)/.88 var(--display); text-transform: uppercase;
+  padding-top: .15em; margin-top: -.15em;
+  background: var(--chrome); background-size: 200% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: shine 7s linear infinite;
+}
+.feature__meta { margin: .8rem 0 1.2rem; font-size: .8rem; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); }
+.feature__body > p:not(.feature__label):not(.feature__meta) { color: #c2c2c7; max-width: 44ch; margin-bottom: 1.8rem; }
+@media (max-width: 767px) {
+  .feature__title { font-size: clamp(3.4rem, 17vw, 4.6rem); animation: none; background-position: 30% 0; }
+  .feature__label { letter-spacing: .18em; font-size: .7rem; }
+  .feature .btn { width: 100%; }
+}
