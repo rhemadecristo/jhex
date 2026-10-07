@@ -294,6 +294,23 @@
       </div>
     </section>
 
+    <!-- LINTERNA: la luz sigue al cursor o al dedo -->
+    <section class="dark" id="luz" aria-labelledby="luz-t">
+      <div class="dark__stage" data-flashlight>
+        <img class="dark__img" loading="lazy" decoding="async"
+          src="https://res.cloudinary.com/dawxjcvf/image/upload/c_fill,g_face,ar_16:9,w_1600,f_auto,q_auto/WhatsApp_Image_2026-09-28_at_14.23.34.jpg"
+          srcset="https://res.cloudinary.com/dawxjcvf/image/upload/c_fill,g_face,ar_3:4,w_900,f_auto,q_auto/WhatsApp_Image_2026-09-28_at_14.23.34_1.jpg 900w,
+                  https://res.cloudinary.com/dawxjcvf/image/upload/c_fill,g_face,ar_16:9,w_1600,f_auto,q_auto/WhatsApp_Image_2026-09-28_at_14.23.34.jpg 1600w"
+          sizes="100vw" width="1600" height="900" alt="JHEX en la oscuridad">
+        <div class="dark__veil" aria-hidden="true"></div>
+        <div class="dark__text">
+          <h2 id="luz-t" class="dark__title">En la oscuridad<br>brilla la luz</h2>
+          <p class="dark__line">Un mensaje positivo es música para todos.</p>
+        </div>
+        <p class="dark__hint" aria-hidden="true"><span class="dark__hint-mouse">Mueve el cursor para encender la luz</span><span class="dark__hint-touch">Desliza el dedo para encender la luz</span></p>
+      </div>
+    </section>
+
     <!-- GALERÍA (horizontal en escritorio) -->
     <section class="gallery" id="galeria" aria-labelledby="galeria-t">
       <div class="gallery__pin">
@@ -417,6 +434,21 @@
     </section>
   </main>
 
+  <!-- Secreto: escribe RENDIDO o toca el logo 5 veces -->
+  <div class="secret" id="secreto" role="dialog" aria-modal="true" aria-labelledby="secreto-t" hidden>
+    <canvas class="secret__sparks" aria-hidden="true"></canvas>
+    <div class="secret__box">
+      <p class="secret__kicker">Encontraste el secreto</p>
+      <img class="secret__logo" src="https://res.cloudinary.com/dawxjcvf/image/upload/e_trim/f_auto,q_auto,w_900/ChatGPT_Image_Oct_6_2026_03_35_01_PM-1.png" width="900" height="560" alt="JHEX">
+      <h2 id="secreto-t" class="secret__title">Rendido</h2>
+      <p class="secret__msg">Un mensaje positivo es música para todos.<br>Sé de los primeros en escucharla.</p>
+      <div class="secret__actions">
+        <a class="btn btn--chrome" href="https://escol.io/rendido" target="_blank" rel="noopener" data-presave>Hacer pre-save</a>
+        <button class="btn btn--line secret__close" type="button">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
   <a class="float-cta" href="https://escol.io/rendido" target="_blank" rel="noopener" data-presave>
     <span class="float-cta__dot" aria-hidden="true"></span>
     <span>Pre-save <strong>Rendido</strong></span>
@@ -441,5 +473,6 @@
   <script src="js/vendor/ScrollTrigger.min.js" defer></script>
   <script src="js/vendor/lenis.min.js" defer></script>
   <script src="script.js" defer></script>
+  <script src="js/interactive.js" defer></script>
 </body>
 </html>

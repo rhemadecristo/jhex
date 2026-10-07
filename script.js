@@ -14,6 +14,7 @@
   let lenis = null;
   if (animate && typeof window.Lenis !== 'undefined') {
     lenis = new window.Lenis({ duration: 1.15, smoothWheel: true });
+    window.__lenis = lenis;
     lenis.on('scroll', ScrollTrigger.update);
     gsap.ticker.add((t) => lenis.raf(t * 1000));
     gsap.ticker.lagSmoothing(0);
