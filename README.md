@@ -24,6 +24,10 @@ python3 -m http.server 8000
 | Dominio | Reemplaza `https://jhex.vercel.app` en `index.html`, `robots.txt`, `sitemap.xml` y `llms.txt` |
 | Colores | Variables en `:root` de `styles.css` |
 
+## Caché
+
+Al cambiar `styles.css`, `script.js` o `js/interactive.js`, sube el número `?v=` de esos archivos en `index.html` para que los navegadores descarguen la versión nueva.
+
 ## Publicar
 
 Conectado a Vercel: cada push a `main` se publica solo.
