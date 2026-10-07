@@ -579,3 +579,9 @@ strong { color: #fff; }
   .hero__logo { width: min(46vw, 11rem); }
   .hero__tag { margin: .7rem 0 1rem; font-size: .9rem; }
 }
+
+/* Pantallas muy angostas: el "Pre-save" de la tarjeta de Rendido baja a su propia línea */
+@media (max-width: 380px) {
+  .prev { grid-template-columns: auto 1fr; }
+  .prev__cta { grid-column: 2; padding-bottom: 0; }
+}
